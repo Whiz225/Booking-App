@@ -6,5 +6,6 @@ import eslint from "vite-plugin-eslint";
 export default defineConfig({
   plugins: [react()],
   // plugins: [react(), eslint()],
-  base: "/Booking-App/",
+  base: "/",
+  // base: "/Booking-App/",
 });
