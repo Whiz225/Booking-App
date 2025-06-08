@@ -23,16 +23,29 @@ export async function signup({ fullName, email, password, passwordConfirm }) {
   return user;
 }
 
-export async function updateCurrentUser({ email, password }) {
-  // console.log(email, password);
-  // const res = await axios.patch("/users/login", { email, password });
-
-  // if (res.data.status !== "success")
-  //   throw new Error("Provided email or passWord is incorrect!");
-
-  // const { user } = res.data.data;
+export async function updateCurrentUser({ email, fullName, avatar }) {
+  const res = await axios.patch("/users/updateMyData", {
+    email,
+    fullName,
+    avatar,
+  });
+  const { user } = res.data.data;
   // return user;
-  return null;
+  return user;
+}
+
+export async function updateCurrentUserPassword({
+  password,
+  newPassword,
+  newPasswordConfirm,
+}) {
+  const res = await axios.patch("/users/updatepassword", {
+    password,
+    newPassword,
+    newPasswordConfirm,
+  });
+  const { user } = res.data.data;
+  return user;
 }
 
 export async function getCurrentUser() {
