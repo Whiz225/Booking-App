@@ -9,7 +9,6 @@ import { formatCurrency } from "../../utils/helpers";
 
 function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
   // 1.
-  console.log(bookings);
   const numBookings = bookings.length;
 
   // 2.

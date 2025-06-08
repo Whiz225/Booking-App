@@ -28,7 +28,7 @@ export function useCreateCabin() {
       const error = err.response.data.message.includes("duplicate key")
         ? `Duplicate key Name: "${errString(err)}" `
         : err.response.data.message;
-      console.log(err);
+      // console.log(err);
       toast.error(error);
     },
   });

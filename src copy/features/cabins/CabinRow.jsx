@@ -76,7 +76,7 @@ function CabinRow({ cabin }) {
 
   return (
     <Table.Row>
-      <Img src={`public/${image}`} />
+      <Img src={`/${image}`} />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>

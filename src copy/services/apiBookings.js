@@ -29,7 +29,6 @@ export async function getBookings({ filter, sortBy, page }) {
   // }
 
   // return { data, count };
-
   const res = await axios.get("/bookings");
   const { data } = res.data.data;
 
@@ -47,7 +46,6 @@ export async function getBookingsAfterDate(date) {
   const res = await axios.get(`/bookings/BookingsAfterDate/${date}`);
 
   const { plan: data } = res.data.data;
-  console.log(data);
   return data;
 }
 
@@ -57,7 +55,6 @@ export async function getStaysAfterDate(date) {
 
   const { plan: data } = res.data.data;
 
-  console.log(data);
   return data;
 }
 
@@ -85,19 +82,6 @@ export async function getStaysTodayActivity() {
 }
 
 export async function updateBooking(id, obj) {
-  // const { data, error } = await supabase
-  //   .from("bookings")
-  //   .update(obj)
-  //   .eq("id", id)
-  //   .select()
-  //   .single();
-
-  // if (error) {
-  //   console.error(error);
-  //   throw new Error("Booking could not be updated");
-  // }
-  // return data;
-
   const res = await axios.patch(`/bookings/${id}`, obj);
   const { data } = res.data.data;
 
@@ -105,14 +89,7 @@ export async function updateBooking(id, obj) {
 }
 
 export async function deleteBooking(id) {
-  // REMEMBER RLS POLICIES
-  // const { data, error } = await supabase.from("bookings").delete().eq("id", id);
+  const res = await axios.delete(`/bookings/${id}`);
 
-  // if (error) {
-  //   console.error(error);
-  //   throw new Error("Booking could not be deleted");
-  // }
-  // return data;
-
-  return {};
+  return null;
 }

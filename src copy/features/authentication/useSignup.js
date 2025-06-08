@@ -24,7 +24,7 @@ export function useSignup() {
       const error = err.response.data.message.includes("duplicate key")
         ? `Duplicate key Email: "${errString(err)}" `
         : err.response.data.message;
-      console.log(err);
+      // console.log(err);
       toast.error(error);
     },
   });
