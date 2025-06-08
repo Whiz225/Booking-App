@@ -6,7 +6,6 @@ export async function getCabins() {
   if (res.data.status !== "success")
     throw new Error("Cabins could not be loaded");
 
-  console.log(res.data.data.data);
   const { data } = res.data.data;
   return data;
 }
